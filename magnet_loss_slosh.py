@@ -34,6 +34,8 @@ def parse_settings():
 						help='Folder with SLOSH input data')
     parser.add_argument('--model_folder', default=package_dir +'/saved_models/', type=str,
 						help='Folder to keep trained models')
+    parser.add_argument('--embed_dim', default=8, type=int,
+						help='Dimension of low-dimensional embedding space')
     return parser.parse_args()
 
 def run_magnet_loss(args):
@@ -88,7 +90,7 @@ def run_magnet_loss(args):
 
     trainloader, testloader, trainset, testset = train_dataloader, val_dataloader, train_gen, val_gen
 
-    emb_dim = 8
+    emb_dim = args.embed_dim
     epoch_steps = len(trainloader)
     n_steps = epoch_steps * 50 * 2
     cluster_refresh_interval = epoch_steps
