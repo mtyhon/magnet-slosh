@@ -8,6 +8,7 @@ To run, input the following in the terminal (add -h to see a list of input argum
 **python magnet_loss_slosh.py**  
 
 The data for this experiment is stored in /data/ is the kepler q9 stellar variability catalog curated by [TASOC](https://tasoc.dk/). The labels are as follows:  
+    
 0. APERIODIC
 1. CONSTANT
 2. CONTACT_ROT
@@ -25,5 +26,5 @@ By default this repo is set up to load and save data to their corresponding fold
 This code was tested using Pytorch 1.1.0.
 
 ![Sample Embedding](/sample/sample.png)
-Format: ![Alt Text](url)
+Example t-SNE Projections with different values of perplexity.
 
